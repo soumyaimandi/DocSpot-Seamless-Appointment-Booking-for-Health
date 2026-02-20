@@ -1,0 +1,137 @@
+.history-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.history-container {
+  width: 800px;
+  color: white;
+}
+
+.history-container h1 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.appointment-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+}
+
+.appointment-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  font-size: 18px;
+}
+
+.status {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+.status.approved {
+  background: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+}
+
+.status.rejected {
+  background: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+}
+
+.card-body p {
+  margin: 8px 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.no-data {
+  text-align: center;
+  opacity: 0.7;
+}
+.cancel-btn {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background: rgba(220, 53, 69, 0.4);
+}
+/* Floating Background for History Page */
+.history-page {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft floating circles */
+.history-page::before,
+.history-page::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,198,255,0.12) 0%, rgba(0,198,255,0.04) 60%, transparent 100%);
+  animation: floatHistory 18s infinite ease-in-out;
+  z-index: 0;
+}
+
+/* Top Left Circle */
+.history-page::before {
+  width: 260px;
+  height: 260px;
+  top: -80px;
+  left: -80px;
+}
+
+/* Bottom Right Circle */
+.history-page::after {
+  width: 340px;
+  height: 340px;
+  bottom: -100px;
+  right: -100px;
+  animation-delay: 7s;
+}
+
+/* Keep content above background */
+.history-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating animation */
+@keyframes floatHistory {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-35px); }
+  100% { transform: translateY(0px); }
+}

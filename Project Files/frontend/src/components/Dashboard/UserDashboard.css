@@ -1,0 +1,126 @@
+.dashboard-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: "Poppins", sans-serif;
+}
+
+.dashboard-card {
+  width: 420px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+}
+
+.dashboard-card h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.dashboard-card p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+.dashboard-card button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Primary */
+.primary-btn {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.4);
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 114, 255, 0.6);
+}
+
+/* Secondary */
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Logout */
+.logout-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ff4d4d;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 77, 77, 0.15);
+}
+/* Floating Background for Dashboard */
+.dashboard-page {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Big floating shapes */
+.dashboard-page::before,
+.dashboard-page::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,198,255,0.15) 0%, rgba(0,198,255,0.05) 60%, transparent 100%);
+  animation: floatDashboard 14s infinite ease-in-out;
+  z-index: 0;
+}
+
+/* Top Left */
+.dashboard-page::before {
+  width: 250px;
+  height: 250px;
+  top: -70px;
+  left: -70px;
+}
+
+/* Bottom Right */
+.dashboard-page::after {
+  width: 320px;
+  height: 320px;
+  bottom: -100px;
+  right: -100px;
+  animation-delay: 5s;
+}
+
+/* Keep card above */
+.dashboard-card {
+  position: relative;
+  z-index: 2;
+}
+
+/* Animation */
+@keyframes floatDashboard {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0px); }
+}
+
