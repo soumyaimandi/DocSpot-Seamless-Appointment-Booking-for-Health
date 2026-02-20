@@ -53,16 +53,4 @@ DocSpot is a web-based healthcare appointment booking system that connects patie
 git clone https://github.com/your-username/docspot.git
 cd docspot
 
-## 🔹 Frontend Setup
 
-```bash
-cd frontend
-npm install
-npm start
-
-## 🔹 Backend Setup
-
-```bash
-cd backend
-npm install
-npm start
